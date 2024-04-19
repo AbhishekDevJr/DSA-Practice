@@ -46,4 +46,28 @@ console.log(longestCommonPrefix(["flower","flow","flight"]));
 console.log(isValid('[{()}]'));
 // true
 
-3. 
+3. Isomorphic Strings, Word Pattern (Similar Questions)
+
+     const isIsomorphicString = (s, t) => {
+  if(s.length !== t.length){
+    return false;
+  }
+  
+  const obj = {};
+  const obj2 = {};
+  
+  for(let i = 0; i < s.length; i++){
+    if((obj[s[i]] && obj[s[i]] !== t[i]) || (obj2[t[i]] && obj2[t[i]] !== s[i])){
+      return false;
+    }
+    else{
+      obj[s[i]] = t[i];
+      obj2[t[i]] = s[i];
+    }
+  }
+  
+  return true;
+  
+}
+console.log(isIsomorphicString('egg', 'add'));
+//true
