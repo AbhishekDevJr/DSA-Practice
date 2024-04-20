@@ -46,7 +46,23 @@ console.log(longestCommonPrefix(["flower","flow","flight"]));
 console.log(isValid('[{()}]'));
 // true
 
-3. Isomorphic Strings, Word Pattern (Similar Questions)
+3. Valid Palindrome
+  const isValid = (s) => {
+  const temp = s.toLowerCase().replace(/[^a-zA-Z0-9]/g, '');
+  
+  for(let i = 0; i < temp.length; i++){
+    if(temp[i] !== temp[temp.length-1-i]){
+      return false;
+    }
+  }
+  
+  return true;
+}
+
+console.log(isValid('A man, a plan, a canal: Panama'));
+//true
+
+5. Isomorphic Strings, Word Pattern (Similar Questions)
 
      const isIsomorphicString = (s, t) => {
   if(s.length !== t.length){
